@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body>
+    <!-- Weather Application -->
+    <section
+      aria-label="HomeScreen"
+      class="h-full md:h-full w-full lg:h-screen bg-cyan-50 flex"
+    >
+      <!-- Main Page -->
+      <section
+        aria-label="MainContainer"
+        class="flex w-full flex-col-reverse lg:flex-row md:flex-row-reverse"
+      >
+        <!-- Left conatiner -->
+        <div
+          class="left_container p-4 bg-cyan-50 md:w-3/4 w-full space-y-2 lg:space-y-8"
+        >
+          <!-- Date & Time -->
+          <div class="date_time">
+            <h1 class="text-2xl md:text-4xl font-bold text-blue-500 livetime">
+              07:32 AM
+            </h1>
+            <p class="livedate">Wednesday, 14 April, 2023</p>
+          </div>
+          <!-- Time Weather -->
+          <div
+            class="time_container grid grid-cols-3 min-[425px]:grid-cols-4 lg:grid-cols-7 md:grid-cols-4 gap-2 w-full"
+          >
+            <!-- 12:00 AM Card -->
+            <div
+              class="12am card text-sm rounded-xl shadow-xl w-fit p-3 flex flex-col justify-center items-center space-y-1 text-white bg-slate-700"
+            >
+              <h1 class="">12:00 AM</h1>
+              <p class="text-xs">MIDNIGHT</p>
+              <p class="text-xl font-bold timetemp">--</p>
+            </div>
+            <!-- 04:00 AM Card -->
+            <div
+              class="monday card text-sm rounded-xl shadow-xl w-fit p-3 flex flex-col justify-center items-center space-y-1 text-white bg-slate-500"
+            >
+              <h1 class="">04:00 AM</h1>
+              <p class="text-xs">MORNING</p>
+              <p class="text-xl font-bold timetemp">--</p>
+            </div>
+            <!-- 08:AM Card -->
+            <div
+              class="tuesday card text-sm rounded-xl shadow-xl w-fit p-3 flex flex-col justify-center items-center space-y-1 text-white bg-orange-300"
+            >
+              <h1 class="">08:00 AM</h1>
+              <p class="text-xs">MORNING</p>
+              <p class="text-xl font-bold timetemp">--</p>
+            </div>
+            <!-- 12:00 PM Card -->
+            <div
+              class="wednesday card text-sm rounded-xl shadow-xl w-fit p-3 flex flex-col justify-center items-center space-y-1 text-white bg-orange-400"
+            >
+              <h1 class="">12:00 PM</h1>
+              <p class="text-xs">MIDDAY</p>
+              <p class="text-xl font-bold timetemp">--</p>
+            </div>
+            <!-- 04:00 PM Card -->
+            <div
+              class="thursday card text-sm rounded-xl shadow-xl w-fit p-3 flex flex-col justify-center items-center space-y-1 text-white bg-orange-300"
+            >
+              <h1 class="">04:00 PM</h1>
+              <p class="text-xs">NOON</p>
+              <p class="text-xl font-bold timetemp">--</p>
+            </div>
+            <!-- 08:00PM Card -->
+            <div
+              class="friday card text-sm rounded-xl shadow-xl w-fit p-3 flex flex-col justify-center items-center space-y-1 text-white bg-slate-400"
+            >
+              <h1 class="">08:00 PM</h1>
+              <p class="text-xs">EVENING</p>
+              <p class="text-xl font-bold timetemp">--</p>
+            </div>
+            <!-- 11:00 PM Card -->
+            <div
+              class="Saturday card text-sm rounded-xl shadow-xl w-fit p-3 flex flex-col justify-center items-center space-y-1 text-white bg-slate-500"
+            >
+              <h1 class="">11:00 PM</h1>
+              <p class="text-xs">NIGHT</p>
+              <p class="text-xl font-bold timetemp">--</p>
+            </div>
+          </div>
+          <!-- More details weather Container -->
+          <div class="more_details flex w-full">
+            <!-- Right Container -->
+            <div
+              class="right_details_container flex w-full flex-col-reverse md:flex-col-reverse md:space-x-0 lg:space-x-24 lg:flex-row"
+            >
+              <!-- Future Details -->
+              <div
+                class="future_detail_container lg:w-2/5 shadow-xl rounded-xl grid md:w-full bg-white mt-2"
+              >
+                <!-- Day 1 -->
+                <div
+                  class="future_day_one future_card space-y-2 flex flex-col border-b-2 p-2 pt-4"
+                >
+                  <!-- LeftContainer -->
+                  <div
+                    class="left_future_container flex w-full justify-between"
+                  >
+                    <div class="date text-lg font-semibold futuretempdate">
+                      --/--/-----
+                    </div>
+                    <!-- Right Container -->
+                    <div class="minmax flex space-x-5">
+                      <p>
+                        Max:
+                        <span class="futuremaxtemp">-- </span>
+                      </p>
+                      <p>
+                        Min:
+                        <span class="futuremintemp">-- </span>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Right Container -->
+                  <div
+                    class="right_future_container flex w-full justify-around"
+                  >
+                    <div class="sunrise flex space-x-2 items-center">
+                      <img src="./images/sunriseicon.png" alt="" class="w-8" />
+                      <p class="h-fit futuresunrise">----</p>
+                    </div>
+                    <div
+                      class="sunset flex space-x-2 align-bottom items-center"
+                    >
+                      <img src="./images/sunseticon.png" alt="" class="w-8" />
+                      <p class="h-fit futuresunset">----</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Day 2 -->
+                <div
+                  class="future_day_one future_card space-y-2 flex flex-col border-b-2 p-2 pt-0"
+                >
+                  <!-- LeftContainer -->
+                  <div
+                    class="left_future_container flex w-full justify-between"
+                  >
+                    <div class="date text-lg font-semibold futuretempdate">
+                      --/--/-----
+                    </div>
+                    <!-- Max Min Temp -->
+                    <div class="minmax flex space-x-5">
+                      <p>
+                        Max:
+                        <span class="futuremaxtemp">-- </span>
+                      </p>
+                      <p>
+                        Min:
+                        <span class="futuremintemp">-- </span>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Right Container -->
+                  <div
+                    class="right_future_container flex w-full justify-around"
+                  >
+                    <div class="sunrise flex space-x-2 items-center">
+                      <img src="./images/sunriseicon.png" alt="" class="w-8" />
+                      <p class="h-fit futuresunrise">----</p>
+                    </div>
+                    <div
+                      class="sunset flex space-x-2 align-bottom items-center"
+                    >
+                      <img src="./images/sunseticon.png" alt="" class="w-8" />
+                      <p class="h-fit futuresunset">----</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Day 3 -->
+                <div
+                  class="future_day_one future_card space-y-2 flex flex-col border-b-2 p-2 pt-0"
+                >
+                  <!-- LeftContainer -->
+                  <div
+                    class="left_future_container flex w-full justify-between"
+                  >
+                    <div class="date text-lg font-semibold futuretempdate">
+                      --/--/-----
+                    </div>
+                    <!-- Max Min Temp -->
+                    <div class="minmax flex space-x-5">
+                      <p>
+                        Max:
+                        <span class="futuremaxtemp">-- </span>
+                      </p>
+                      <p>
+                        Min:
+                        <span class="futuremintemp">-- </span>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Right Container -->
+                  <div
+                    class="right_future_container flex w-full justify-around"
+                  >
+                    <div class="sunrise flex space-x-2 items-center">
+                      <img src="./images/sunriseicon.png" alt="" class="w-8" />
+                      <p class="h-fit futuresunrise">----</p>
+                    </div>
+                    <div
+                      class="sunset flex space-x-2 align-bottom items-center"
+                    >
+                      <img src="./images/sunseticon.png" alt="" class="w-8" />
+                      <p class="h-fit futuresunset">----</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Day 4 -->
+                <div
+                  class="future_day_one future_card space-y-2 flex flex-col p-2 pt-0"
+                >
+                  <!-- LeftContainer -->
+                  <div
+                    class="left_future_container flex w-full justify-between"
+                  >
+                    <div class="date text-lg font-semibold futuretempdate">
+                      --/--/-----
+                    </div>
+                    <!-- Max Min Temp -->
+                    <div class="minmax flex text-sm md:space-x-5">
+                      <p>
+                        Max:
+                        <span class="futuremaxtemp">-- </span>
+                      </p>
+                      <p>
+                        Min:
+                        <span class="futuremintemp">-- </span>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Right Container -->
+                  <div
+                    class="right_future_container flex w-full justify-around"
+                  >
+                    <div class="sunrise flex space-x-2 items-center">
+                      <img src="./images/sunriseicon.png" alt="" class="w-8" />
+                      <p class="h-fit futuresunrise">----</p>
+                    </div>
+                    <div
+                      class="sunset flex space-x-2 align-bottom items-center"
+                    >
+                      <img src="./images/sunseticon.png" alt="" class="w-8" />
+                      <p class="h-fit futuresunset">----</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fetched Details -->
+              <div
+                class="fetched_details w-full md:w-full lg:w-3/5 rounded-xl shadow-2xl bg-transparent pt-4 pb-2 md:space-y-1"
+              >
+                <div class="flex justify-start space-x-1 px-2">
+                  <img src="./images/locationicon2.png" alt="" class="h-6" />
+                  <h3 class="searched_loction text-lg font-semibold">MUMBAI</h3>
+                </div>
+                <!-- Sunrise and Set Container -->
+                <div class="rise_set_container">
+                  <div
+                    class="right_future_container flex w-full justify-around"
+                  >
+                    <div class="sunrise flex space-x-4 items-center">
+                      <img src="./images/sunriseicon.png" alt="" class="" />
+                      <div>
+                        <h2 class="text-xl">Sunrise</h2>
+                        <p class="h-fit today_sunrise">----</p>
+                      </div>
+                    </div>
+                    <div
+                      class="sunset flex space-x-4 align-bottom items-center"
+                    >
+                      <img src="./images/sunseticon.png" alt="" class="" />
+                      <div>
+                        <h2 class="text-xl">Sunset</h2>
+                        <p class="h-fit today_sunset">-----</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- other details -->
+                <div class="otherdetails_container space-y-1">
+                  <!-- Wind -->
+                  <div
+                    class="flex flex-col justify-between items-center space-y-4 pt-4"
+                  >
+                    <div class="wind_details flex space-x-2">
+                      <div
+                        class="flex space-x-2 items-baseline rounded-lg shadow-lg p-2 bg-white"
+                      >
+                        <p>Wind Speed:</p>
+                        <p class="windspeed">
+                          -- <span class="text-sm">km/h</span>
+                        </p>
+                      </div>
+                      <div
+                        class="flex space-x-2 items-baseline rounded-lg shadow-lg p-2 bg-white"
+                      >
+                        <p>Wind Degree:</p>
+                        <p class="winddegree">---</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div
+                    class="flex flex-col justify-between items-center space-y-4 pt-4"
+                  >
+                    <div class="wind_details flex space-x-2">
+                      <div
+                        class="flex space-x-2 items-baseline rounded-lg shadow-lg p-2 bg-white"
+                      >
+                        <p>Wind Direction:</p>
+                        <p class="winddirection">--</p>
+                      </div>
+                      <div
+                        class="flex space-x-2 items-baseline rounded-lg shadow-lg p-2 bg-white"
+                      >
+                        <p>Humidity:</p>
+                        <p class="humidity">--</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Longitude and latitude -->
+                  <div
+                    class="flex flex-col justify-between items-center space-y-4 pt-4"
+                  >
+                    <div class="wind_details flex space-x-2">
+                      <div
+                        class="flex space-x-2 items-baseline rounded-lg shadow-lg p-2 bg-white"
+                      >
+                        <p>Latitude:</p>
+                        <p class="latitude">----</p>
+                      </div>
+                      <div
+                        class="flex space-x-2 items-baseline rounded-lg shadow-lg p-2 bg-white"
+                      >
+                        <p>Longitude:</p>
+                        <p class="longitude">----</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Local Time -->
+                  <div
+                    class="flex flex-col justify-between items-center space-y-4 pt-4"
+                  >
+                    <div class="wind_details flex space-x-2">
+                      <div
+                        class="flex space-x-2 items-baseline rounded-lg shadow-lg p-2 bg-white"
+                      >
+                        <p>Local Time:</p>
+                        <p class="localtime">-------------</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Conatiner -->
+        <div
+          class="right_container w-full flex flex-col space-y-4 bg-emerald-100 p-5 md:w-[40%] lg:w-1/4"
+        >
+          <!-- Search -->
+          <div
+            class="search_container w-full rounded-2xl shadow-xl border-b-2 border-white"
+          >
+            <form class="flex" onsubmit="getdata(event)">
+              <img
+                src="./images/locationicon.png"
+                alt=""
+                class="w-8 bg-transparent/5 rounded-l-2xl"
+              />
+              <input
+                type="text"
+                placeholder="Search your city"
+                id="searchinput"
+                class="w-full focus:outline-none px-2 bg-transparent/5"
+              />
+              <button class="bg-transparent/5 rounded-r-2xl">
+                <img
+                  src="./images/searchicon.png"
+                  alt=""
+                  id="search"
+                  class="w-10 bg-transparent/5 rounded-r-2xl"
+                />
+              </button>
+            </form>
+          </div>
+          <!-- Searched Weather -->
+          <div
+            class="city_weather w-full p-2 bg-white rounded-2xl shadow-lg space-y-4 h-fit py-4"
+          >
+            <div class="flex justify-start space-x-1">
+              <img src="./images/locationicon2.png" alt="" class="h-6" />
+              <h3 class="searched_loction text-lg font-semibold">-----</h3>
+            </div>
+            <div class="weather_view items-center flex w-full justify-center">
+              <img
+                src="./images/sunny.gif"
+                alt=""
+                class="h-44"
+                id="animated_climate"
+              />
+            </div>
+            <p class="w-full bg-black/20 h-[2px]"></p>
+            <h1
+              class="text-6xl font-semibold w-full text-center searched_temperature"
+            >
+              --
+            </h1>
+          </div>
+          <!-- Location Data -->
+          <div
+            class="loactaion_data_container w-full p-2 bg-white rounded-2xl shadow-lg space-y-4 py-4"
+          >
+            <div class="location_details text-lg font-semibold">
+              <h1 class="">
+                Location:
+                <span class="font-normal text-lg searched_loction">-----</span>
+              </h1>
+              <h1 class="">
+                Region:
+                <span class="font-normal text-lg region">-----</span>
+              </h1>
+              <h1 class="">
+                Country: <span class="font-normal text-lg country">-----</span>
+              </h1>
+              <h1 class="">
+                TimeZone:
+                <span class="font-normal text-lg timezoneid">-----</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <script src="./Script/script.js"></script>
+  </body>
+</html>
